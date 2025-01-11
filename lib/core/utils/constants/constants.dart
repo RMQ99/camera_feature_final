@@ -1,0 +1,1 @@
+const String cameraErrorMessage = "Failed to access the camera. Please try again.";
