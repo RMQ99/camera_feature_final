@@ -20,8 +20,8 @@ class CustomTable extends StatelessWidget {
     this.cellTextDirections,
     this.borderColor = AppColors.green,
     this.headersColor = AppColors.green,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,8 +72,8 @@ class TableItem extends StatelessWidget {
     required this.headersColor,
     this.textStyle,
     this.textDirection,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

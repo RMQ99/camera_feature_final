@@ -82,6 +82,7 @@ class _CustomDateFieldState extends State<CustomDateField> {
                     border: Border.all(
                         color: widget.enabled ? widget.color : Colors.grey,
                         width: 1.5.w),
+                    // ignore: unrelated_type_equality_checks
                     borderRadius: widget.radius == true
                         ? BorderRadius.circular(12.r)
                         : null,
@@ -107,7 +108,7 @@ class _CustomDateFieldState extends State<CustomDateField> {
                           ? () async {
                               DateTime? dateTime = await showDatePicker(
                                 context: context,
-                                initialDate: widget.date ?? DateTime.now(),
+                                initialDate: widget.date,
                                 firstDate: widget.firstDate ??
                                     DateTime.now().subtract(
                                         Duration(days: widget.days ?? 100)),

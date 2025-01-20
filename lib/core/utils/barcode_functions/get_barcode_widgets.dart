@@ -90,8 +90,9 @@ List<Widget> getBarcodeWidgets(Barcode barcode, Encoding? codec) {
               '',
           style: const TextStyle(color: Colors.white),
         ));
+        // ignore: unnecessary_null_comparison
         widgets.addAll(barcode.contactInfo!.phones != null
-            ? barcode.contactInfo!.phones!
+            ? barcode.contactInfo!.phones
                 .map((e) => Text(
                       e.number ?? '',
                       style: const TextStyle(color: Colors.white),
@@ -153,14 +154,14 @@ List<Widget> getBarcodeWidgets(Barcode barcode, Encoding? codec) {
         // ignore: unnecessary_null_comparison
         widgets.add(barcode.geoPoint!.longitude != null
             ? Text(
-                '${'longitude'.tr()}: ${barcode.geoPoint!.longitude!}',
+                '${'longitude'.tr()}: ${barcode.geoPoint!.longitude}',
                 style: const TextStyle(color: Colors.white),
               )
             : Container());
         // ignore: unnecessary_null_comparison
         widgets.add(barcode.geoPoint!.latitude != null
             ? Text(
-                '${'latitude'.tr()}: ${barcode.geoPoint!.latitude!}',
+                '${'latitude'.tr()}: ${barcode.geoPoint!.latitude}',
                 style: const TextStyle(color: Colors.white),
               )
             : Container());
@@ -201,7 +202,7 @@ List<Widget> getBarcodeWidgets(Barcode barcode, Encoding? codec) {
         // ignore: unnecessary_null_comparison
         widgets.add(barcode.sms!.phoneNumber != null
             ? Text(
-                '${'phone_number'.tr()}: ${barcode.sms!.phoneNumber!}',
+                '${'phone_number'.tr()}: ${barcode.sms!.phoneNumber}',
                 style: const TextStyle(color: Colors.white),
               )
             : Container());
@@ -234,7 +235,7 @@ List<Widget> getBarcodeWidgets(Barcode barcode, Encoding? codec) {
         // ignore: unnecessary_null_comparison
         widgets.add(barcode.url!.url != null
             ? Text(
-                barcode.url!.url!,
+                barcode.url!.url,
                 style: const TextStyle(color: Colors.white),
               )
             : Container());

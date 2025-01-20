@@ -83,6 +83,7 @@ class _CustomDatesRangeFieldState extends State<CustomDatesRangeField> {
                       borderRadius:
                           BorderRadius.circular(widget.radius ?? 15.r),
                       color: Colors.white,
+                      // ignore: deprecated_member_use
                       border: Border.all(color: Colors.black.withOpacity(0.2))),
                   child: Directionality(
                     textDirection: textAlign == TextAlign.right
@@ -101,7 +102,7 @@ class _CustomDatesRangeFieldState extends State<CustomDatesRangeField> {
                               DateTime? dateTime = await showDatePicker(
                                   context: context,
                                   initialDate:
-                                      widget.startDate ?? DateTime.now(),
+                                      widget.startDate,
                                   firstDate: widget.endDate
                                       .subtract(Duration(days: widget.days)),
                                   lastDate: widget.endDate);
@@ -177,6 +178,7 @@ class _CustomDatesRangeFieldState extends State<CustomDatesRangeField> {
                       borderRadius:
                           BorderRadius.circular(widget.radius ?? 15.r),
                       color: Colors.white,
+                      // ignore: deprecated_member_use
                       border: Border.all(color: Colors.black.withOpacity(0.2))),
                   child: Directionality(
                     textDirection: textAlign == TextAlign.right
@@ -194,7 +196,7 @@ class _CustomDatesRangeFieldState extends State<CustomDatesRangeField> {
                           ? () async {
                               DateTime? dateTime = await showDatePicker(
                                   context: context,
-                                  initialDate: widget.endDate ?? DateTime.now(),
+                                  initialDate: widget.endDate,
                                   firstDate: widget.startDate,
                                   lastDate: widget.startDate
                                       .add(Duration(days: widget.days)));

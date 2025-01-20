@@ -1,5 +1,6 @@
 import 'package:camera_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomDrawerItem extends StatelessWidget {

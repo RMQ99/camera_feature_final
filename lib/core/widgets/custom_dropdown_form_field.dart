@@ -2,7 +2,6 @@ import 'package:camera_app/core/theme/app_colors.dart';
 import 'package:camera_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomDropdownFormField extends StatelessWidget {
   final List<Map<String, dynamic>> items;
@@ -41,9 +40,7 @@ class CustomDropdownFormField extends StatelessWidget {
               height: 8.h,
             ),
             Text(label,
-                style: labelTextStyle != null
-                    ? labelTextStyle
-                    : CAStyles.lightTextStyle
+                style: labelTextStyle ?? CAStyles.lightTextStyle
                         .merge(TextStyle(color: Colors.grey, fontSize: 14.sp))),
             SizedBox(
               height: 8.h,
@@ -76,9 +73,7 @@ class CustomDropdownFormField extends StatelessWidget {
                         .map((e) => DropdownMenuItem(
                               value: e['value'],
                               child: Text(e['title'],
-                                  style: itemStyle != null
-                                      ? itemStyle
-                                      : CAStyles.lightTextStyle
+                                  style: itemStyle ?? CAStyles.lightTextStyle
                                           .merge(TextStyle(fontSize: 15.sp))),
                             ))
                         .toList(),

@@ -372,12 +372,12 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 class CustomBirthDateFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue prevText, TextEditingValue currText) {
+      TextEditingValue oldValue, TextEditingValue newValue) {
     int selectionIndex;
 
     // Get the previous and current input strings
-    String pText = prevText.text;
-    String cText = currText.text;
+    String pText = oldValue.text;
+    String cText = newValue.text;
     // Abbreviate lengths
     int cLen = cText.length;
     int pLen = pText.length;
@@ -420,21 +420,21 @@ class CustomBirthDateFormatter extends TextInputFormatter {
     } else if (cLen == 3 && pLen == 2) {
       if (int.parse(cText.substring(2, 3)) > 1) {
         // Replace char
-        cText = cText.substring(0, 2) + '/';
+        cText = '${cText.substring(0, 2)}/';
       } else {
         // Insert / char
         cText =
-            cText.substring(0, pLen) + '/' + cText.substring(pLen, pLen + 1);
+            '${cText.substring(0, pLen)}/${cText.substring(pLen, pLen + 1)}';
       }
     } else if (cLen == 6 && pLen == 5) {
       // Can only be 1 or 2 - if so insert a / char
       int y1 = int.parse(cText.substring(5, 6));
       if (y1 < 1 || y1 > 2) {
         // Replace char
-        cText = cText.substring(0, 5) + '/';
+        cText = '${cText.substring(0, 5)}/';
       } else {
         // Insert / char
-        cText = cText.substring(0, 5) + '/' + cText.substring(5, 6);
+        cText = '${cText.substring(0, 5)}/${cText.substring(5, 6)}';
       }
     } else if (cLen == 7) {
       // Can only be 1 or 2

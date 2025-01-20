@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 void showSnackbar(BuildContext context, String message,
     {Color? color, bool? isInfo, bool? isError}) {
